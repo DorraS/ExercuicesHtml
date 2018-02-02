@@ -1,0 +1,31 @@
+html{
+    background-color: aquamarine;
+}
+.bigcontainer{
+    display:block;
+    width: calc(272px * 3);
+
+
+}
+.container{
+    display: inline-block;
+    float: left;
+    border: 1px solid darkblue;
+    margin: 10px;
+    padding: 1px;
+    width: 250px;
+    height:250px;
+    background-color: white;
+    box-sizing:border-box;
+}
+ .inline{
+     background-color: #8ae234;
+     border: 1px solid black;
+     display: inline-block;
+
+ }
+.block {
+    display: block;
+    background-color: lightblue;
+    border: 1px solid blue;
+}
