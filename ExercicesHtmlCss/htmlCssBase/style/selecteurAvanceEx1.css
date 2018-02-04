@@ -1,0 +1,27 @@
+/** mettre en couleur les paragraphes, en utilisant uniquement les sélecteurs ~ et + **/
+
+h1 + p {
+   color: blue;
+}
+
+h1 + p + p {
+  color : red;
+}
+
+h2 + p {
+  color: yellow;
+}
+
+h2 + p ~ p + p{
+  color : green;
+}
+
+p + p +h2 +h3 + p  {
+  color : darkblue;
+}
+
+
+h3 + p  {
+  color : pink;
+}
+
