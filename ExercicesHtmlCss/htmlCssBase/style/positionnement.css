@@ -1,0 +1,60 @@
+@CHARSET "ISO-8859-1";
+html{
+	background-color:blue;
+	}
+.row{
+ display: block;
+ background-color: white;
+ 
+}
+.container{
+	display: inline-block;
+	float:left;
+	border: 1px solid #EB0104;
+	box-sizing: border-box;
+	background-color:white;
+	margin: 5px;
+	width: 250px;
+	height: 200px; 
+}
+
+.fleft {
+	display: inline-block;
+	float: left;
+	background-color: #6BDA6D;
+	border: 1px solid #016D03;
+	box-sizing: border-box;
+	height: 20%;
+	
+}
+
+
+
+
+.fright {
+	display: inline-block;
+	float:right;
+	background-color: #42ACE6;
+	border: 1px solid #013E8A;
+	box-sizing: border-box;
+	height: 20%;
+
+}
+.clrBox{
+	background-color: #D7EB01;
+	border: 1px solid #000000;
+	text-align: center;
+	clear: both;
+}
+.half{
+	width: 50%;
+}
+.third{
+	width:33.33%
+	
+}
+.quarter{
+	width: 25%;
+	
+	
+}
