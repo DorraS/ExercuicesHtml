@@ -1,0 +1,43 @@
+@CHARSET "ISO-8859-1";
+
+*{
+	margin: 5px;
+}
+a:hover {
+	color:#B232FB;
+	text-decoration: none;
+}
+input:required {
+	border: 1px solid red;
+	
+}
+table,tr,td,th{
+	border:3px solid black;
+}
+
+tr:hover{
+	color: #E9FDEC;
+	
+}
+tr:NTH-CHILD(even) {
+	background-color:#21D0DA;
+}
+tr:FIRST-CHILD {
+	text-align: center;
+	color: red;
+	text-transform:uppercase;
+}
+/*formulaire champ:active*/
+#FORM_2 input:ACTIVE{
+	background-color: green;
+	border: 3px green;
+}
+
+/*action active et focus sur bouton*/
+input[type=submit]:FOCUS {
+	background-color: yellow;
+}
+
+input[type=submit]:ACTIVE{
+	background-color: blue;
+}
