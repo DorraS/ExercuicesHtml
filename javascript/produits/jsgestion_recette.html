@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon premier projet Simplon</title>
+	<link href='./style.css' rel='stylesheet'/>
+</head>
+<body>
+
+<button onclick="add('ratatouille');">Ratatouille</button>
+<button onclick="add('velouté de tomate');">Velouté de tomate</button>
+<button onclick="add('légume farci');">Légume farci</button>
+
+<div id="resultat">
+  
+</div>
+<script> 
+/* tableau d objet recettes.Chaque recette a une propriete name (pour y acceder recette.name) et une propriete count (pour y acceder recette.count) */
+const recettes = [
+  {name:'ratatouille', ingredients: [
+    {name: "tomate", count: 4},
+    {name: "poivron", count: 4},
+    {name: "aubergine", count: 4},
+    {name: "oignon", count: 4},
+    {name: "courgette", count: 4}
+  ]}, 
+  {name:'velouté de tomate', ingredients: [
+    {name: "tomate", count: 10},
+    {name: "poivron", count: 0},
+    {name: "aubergine", count: 0},
+    {name: "oignon", count: 2},
+    {name: "courgette", count: 0}
+  ]}, 
+  {name:'légume farci', ingredients: [
+    {name: "tomate", count: 6},
+    {name: "poivron", count: 6},
+    {name: "aubergine", count: 0},
+    {name: "oignon", count: 0},
+    {name: "courgette", count: 6}
+  ]}
+];
+let resultat = [
+    {name: "tomate", count: 0},
+    {name: "poivron", count: 0},
+    {name: "aubergine", count: 0},
+    {name: "oignon", count: 0},
+    {name: "courgette", count: 0}
+  ];
+/*ajouter des recettes: cliquer pr ajouter recette 
+=> appelle les ingredients avec 2 attributs nam et counr*/
+//*receipe is parmaeter of the function add*/
+
+function addIngredient( ingredientName,  ingredientCount){
+	for( let i in resultat ){
+	  if( resultat[i].name ===  ingredientName){
+		resultat[i].count +=  ingredientCount;
+		break;
+	  }
+	  
+	} 
+	
+}
+
+function add(receipe) {
+	/*choisir la recette à ajouter*/
+	/*boucle remplace for ((let i=0; i<recettes.length; i++))*/
+	for (let i in recettes){
+		let recette = recettes[i];
+		if	(recette.name === receipe){
+			for ( let j in recette.ingredients){
+			  let  ingredient = recette.ingredients[j];
+			  addIngredient(ingredient.name,ingredient.count); 
+			}	
+			display();
+			break;
+		}
+	}
+}
+
+
+
+function display(){
+
+	totalIngredient = "";
+
+	for (i in resultat){
+		let ingredient  =  resultat[i];
+		totalIngredient +=  ingredient.name+ " ("+ ingredient.count +")<br>";
+	 }
+	 
+	 document.getElementById("resultat").innerHTML = totalIngredient;
+ }
+
+
+
+display();
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon premier projet Simplon</title>
+	<link href='./style.css' rel='stylesheet'/>
+</head>
+<body>
+<section>
+  <article>
+    <h3>Fondation foudroyée</h3>
+    <button onclick="addProduct('livre');">Ajouter</button>
+    <button onclick="deleteProduct('livre');">Supprimer</button>
+  </article>
+  <article>
+    <h3>PS3</h3>
+    <button onclick="addProduct('console');">Ajouter</button>
+    <button onclick="deleteProduct('console');">Supprimer</button>
+  </article>
+  <article>
+    <h3>Orchidées</h3>
+    <button onclick="addProduct('fleur');">Ajouter</button>
+    <button onclick="deleteProduct('fleur');">Supprimer</button>
+  </article>
+  <article>
+    <h3>Liste des articles</h3>
+    <div id="resultat">
+      aucun article pour l'instant
+    </div>
+  </article>
+</section>
+
+
+<script>
+
+/*
+
+produit 
+  - code 
+  - name 
+  - price 
+  - total 
+  produit.code 
+*/
+const productsList = [
+  {code: 'livre', name: 'Fondation foudroyée', price: 10, total: 0 },
+  {code: 'console', name: 'PS3', price: 200, total: 0 },
+  {code: 'fleur', name: 'Orchidée', price: 20, total: 0 }
+];
+
+/*
+ * fonction pour ajouter un produit 
+ */
+function addProduct(code){
+  // chercher l'objet correspondant à ce code
+  
+  // modifier la propriété nombre de cet objet 
+  // pour représenter le fait d'avoir un élément de plus sélectionné
+  for(var index in  productsList){
+     let product = productsList[index];
+	  if(product.code ===  code ){
+		 product.total++;
+		 break;
+	  }
+  }
+  
+  
+  displayCaddie();
+}
+
+/**
+ * fonction pour supprimer un produit
+ */
+function deleteProduct(code){
+  
+  // chercher l'objet correspondant à ce code
+  for(let index in productsList){
+	let product = productsList[index];
+  // modifier la propriété nombre de cet objet 
+  // pour représenter le fait d'avoir un élément de moins sélectionné
+  
+	if(product.total>0 && product.code===code){
+		product.total--;
+	}
+  }
+  
+  displayCaddie();
+}
+
+/**
+ * fonction pour afficher la liste des produits 
+ * name (total)
+ */
+function displayCaddie(){
+  let list = "";
+  for(let index in productsList){
+	 let product = productsList[index];
+		if(product.total>0){
+		 list+= product.name+ '('+product.total+')<br>';
+		}
+  }
+  document.getElementById("resultat").innerHTML = list;
+}
+
+
+</script>
+</body>
+</html>
