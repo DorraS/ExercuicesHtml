@@ -34,6 +34,23 @@
 </ol>
 <div>Vive <a href="https://simplon.co/" target="_blank">Simplon</a>
 </div>
+<script>
 
+
+// declaration d'un objet produit avec les propertiers ( reference ,  prix, labelle, marque)
+var produits =  [{ refrence : 'x001' , prix : 100, type:'TELE' , marque : 'LG'},{ refrence : 'x001' , prix : 100, type:'TELE' , marque : 'Sony'},
+{ refrence : 'x001' , prix : 150, type:'TELE' , marque : 'SUMSUNG'}];
+
+
+for(var i = 0; i< produits.length; i++ ){
+     console.log('-----------------');
+   console.log(produits[i].prix);
+   console.log(produits[i].refrence);
+   console.log(produits[i].type);
+   console.log(produits[i].marque);
+   console.log('-----------------');
+}
+
+</script>
 </body>
 </html>

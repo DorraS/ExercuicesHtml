@@ -1,0 +1,27 @@
+<?php 
+ session_start();
+ ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nombre de match</title>
+</head>
+<body>
+<form method='post' action='nb_match.php'>
+	<label for="lastname">NOM</label>
+	<input name="nom" type='text' id="lastname"/> 
+	<label for="firstname">Prénom</label>
+	<input name="prenom" type='text' id="firstname"/> <br>
+	<label for='sexe'>Homme</label>
+	<input name='sexe' type='radio' id='sexe' value='Homme'>
+	<label for='sexe'>Femme</label>
+	<input name='sexe' type='radio' id='sexe' value='Femme'> <br>
+	<label for="nbMatch">Nombre de match</label>
+	<input name="nbMatch" type='text' id="nbMatch"/> <br>
+	<input type='submit' value='envoyez'/>
+
+</form>
+</body>
+</html>
