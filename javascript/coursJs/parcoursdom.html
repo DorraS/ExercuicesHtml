@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Quelques instruments de musique</title>
+</head>
+
+<body>
+      <h1>Quelques instruments de musique</h1>
+    <ul>
+        <li id="clarinette" class="vent bois">
+            La <a href="https://fr.wikipedia.org/wiki/Clarinette">clarinette</a>
+        </li>
+        <li id="saxophone" class="vent bois">
+            Le <a href="https://fr.wikipedia.org/wiki/Saxophone">saxophone</a>
+        </li>
+        <li id="trompette" class="vent cuivre">
+            La <a href="https://fr.wikipedia.org/wiki/Trompette">trompette</a>
+        </li>
+        <li id="violon" class="cordes frottees">
+            Le <a href="https://fr.wikipedia.org/wiki/Violon">violon</a>
+        </li>
+    </ul>
+
+	<script>
+	/*comptage des éléments
+	function compterElements(selecteur){
+		return document.querySelectorAll(selecteur).length;
+	}
+
+		console.log(compterElements("p")); // Doit afficher 4
+		console.log(compterElements(".adjectif")); // Doit afficher 3
+		console.log(compterElements("p .adjectif")); // Doit afficher 3
+		console.log(compterElements("p > .adjectif")); // Doit afficher 2*/
+	/*gestion  des attributs*/
+	function infoliens(){
+		var link = document.getElementsByTagName("a");
+		var linkNumber = link.length;
+		console.log(linkNumber);
+		if (linkNumber > 0){
+			console.log(linkNumber[0].getAttribute("href"));
+		}
+	}
+	</script>
+</body>
+
+</html>

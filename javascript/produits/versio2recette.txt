@@ -1,0 +1,88 @@
+/**
+ * ajouter recette, supprimer recette, liste des ingrédients
+ * Afficher la liste des ingrédients des recettes sélectionnées
+ */
+
+const recettes = [
+  {
+    name: 'ratatouille', ingredients: [
+      {name: "tomate", count: 4},
+      {name: "poivron", count: 4},
+      {name: "aubergine", count: 4},
+      {name: "oignon", count: 4},
+      {name: "courgette", count: 4}
+    ]
+  },
+  {
+    name: 'velouté de tomate', ingredients: [
+      {name: "tomate", count: 10},
+      {name: "poivron", count: 0},
+      {name: "aubergine", count: 0},
+      {name: "oignon", count: 2},
+      {name: "courgette", count: 0}
+    ]
+  },
+  {
+    name: 'légume farci', ingredients: [
+      {name: "tomate", count: 6},
+      {name: "poivron", count: 6},
+      {name: "aubergine", count: 0},
+      {name: "oignon", count: 0},
+      {name: "courgette", count: 6}
+    ]
+  }
+];
+
+const selected = [ {name: "tomate", count: 0},
+      {name: "poivron", count: 0},
+      {name: "aubergine", count: 0},
+      {name: "oignon", count: 0},
+      {name: "courgette", count: 0}];
+
+/**
+ * ajouter la liste des ingrédients d'une recette
+ * à la liste des recettes sélectionnées
+ * @param recipe
+ */
+function add(recipe) {
+  // recherche de la recette demandée
+  for (let i =0; i< recettes.length; i++){
+    let recette = recettes[i];
+    if(recette.name=== recipe){
+      for(let j=0; j<recette.ingredients.length; j++){
+        let ingrediant= recette.ingredients[j];
+        for (let k=0; k<selected.length; k++){
+          let selectedIngrediant= selected[k];
+          if(selectedIngrediant.name=== ingrediant.name){
+            selectedIngrediant.count+= ingrediant.count;
+    
+            break;
+          }
+          console.log(selectedIngrediant);
+        }
+        
+      } 
+      break;
+    }
+    
+  }
+    // ajout des ingrédients à la liste des recettes sélectionnées
+  
+
+  display();
+}
+
+/**
+ * afficher la liste des ingrédients des recettes sélectionnées
+ */
+function display() {
+  list = "";
+    for (let k=0; k<selected.length; k++){
+          let selectedIngrediant= selected[k];
+      list+= selectedIngrediant.name + ' '+ selectedIngrediant.count+ '<br>';
+    }
+  
+  document.getElementById("resultat").innerHTML = list;
+}
+
+
