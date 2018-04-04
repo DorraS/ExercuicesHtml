@@ -1,0 +1,10 @@
+extends index
+
+block append warning
+	div
+		| <strong>attention</strong> à tes lacets
+
+block content
+	section#articlesList
+		each text in articlesList
+			article=text

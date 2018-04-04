@@ -1,0 +1,35 @@
+doctype
+html
+	head
+		title mon titre
+		meta(charset="UTF-8")
+	body
+		// variables
+		-
+			menusList = ['accueil','articles','contact','a propos']
+			articlesList = [
+				'Est bassus extum, cesaris.',
+				'Est bassus extum, cesaris.',
+				'Est bassus extum, cesaris.'
+			]
+
+		block warning
+			div attention
+
+		// header
+		header
+			nav#header
+				ul
+					each link in menusList
+						li=link
+		// main
+		main
+			.container
+				block content
+
+		// footer
+		footer
+			nav#footer
+				ul
+					each link in menusList
+						li=link
