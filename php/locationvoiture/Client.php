@@ -5,7 +5,9 @@ class Client{
 	private $_prenom;
 	private $_login;
 	private $_motDePasse;
-	 
+	 public function __construct(array $donneesPer){
+	 	$this->hydrate($donneesPer);
+	 }
 	
 	public function getId(){
 		return $this->_id;
@@ -36,6 +38,31 @@ class Client{
 	}
 	public function setMotDePasse($motDePasse){
 		$this->_motDePasse=$motDePasse;
+	}
+	public function hydrate(array $donnees){
+		if (isset($donnees['id']))
+		{
+			$this->setId($donnees['id']);
+		}
+		if (isset($donnees['nom']))
+		{
+			$this->setId($donnees['nom']);
+		}
+		if (isset($donnees['prenom']))
+		{
+			$this->setId($donnees['prenom']);
+		}
+		if (isset($donnees['login']))
+		{
+			$this->setId($donnees['login']);
+		}
+		
+		if (isset($donnees['motdepasse']))
+		{
+			$this->setId($donnees['motdepasse']);
+		}
+		
+		
 	}
 }
 ?>

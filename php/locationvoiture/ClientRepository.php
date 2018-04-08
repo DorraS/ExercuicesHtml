@@ -23,7 +23,7 @@ class ClientRepository{
 		
 		$st= $this->_dbConnexion->prepare('SELECT * From Client');	
 		$st->setFetchMode( PDO::FETCH_CLASS, 'Client');
-		var_dump($st->execute());
+		$st->execute();
 		$listClient= $st->fetch( PDO::FETCH_CLASS);
 		return $listClient;
 	}
