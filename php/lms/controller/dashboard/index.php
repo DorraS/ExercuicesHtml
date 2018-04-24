@@ -1,0 +1,1 @@
+<h1> bonjour <?=$_SESSION['user']['firstname'].' '.$_SESSION['user']['lastname']?>  !!! </h1>
