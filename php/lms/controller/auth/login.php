@@ -61,7 +61,7 @@ if(!empty($email)&& !empty($password)){
                        id="exampleInputPassword1"
                        placeholder="Password"
                        value="<?=$password?>"
-                       autocomplete="off">
+                       autocomplete="off" required 	>
             </div>
             <button type="submit" class="btn btn-primary btn-block">LOG IN</button>
         </form>

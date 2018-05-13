@@ -6,9 +6,17 @@
  * Time: 09:23
  */
 session_start();
-$requested_url= isset($_SESSION['user'])
-				? (isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/dashboard') 
-					: '/auth/login';
+
+$requested_url= '/auth/login';
+
+// si l'utilisateur est connecté 
+if(isset($_SESSION['user'])){
+	if(isset($_SERVER['PATH_INFO'])){
+		$requested_url = $_SERVER['PATH_INFO'];// only path and not query string
+	}else {
+		$requested_url='/dashboard';
+	}   
+}
 	
 
 # initialisation
